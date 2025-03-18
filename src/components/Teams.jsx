@@ -3,5 +3,5 @@ export default function Teams () {
         <div className='container'>
             Teams
         </div>
-    )
+    );
 }

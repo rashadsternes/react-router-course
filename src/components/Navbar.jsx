@@ -9,5 +9,5 @@ export default function Navbar () {
                 <Link to='/teams'>Teams</Link>
             </nav>
         </div>
-    )
+    );
 }

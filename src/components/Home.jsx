@@ -1,12 +1,12 @@
-import TeamLogo from './TeamLogo'
-import { Link } from 'react-router-dom'
-import useTeamNames from '../hooks/useTeamNames'
+import TeamLogo from './TeamLogo';
+import { Link } from 'react-router-dom';
+import useTeamNames from '../hooks/useTeamNames';
 
 export default function Home () {
     const {
         loading,
         response: teamNames
-    } = useTeamNames()
+    } = useTeamNames();
 
     if (loading) {
         return null
@@ -28,5 +28,5 @@ export default function Home () {
                 ))}
             </div>
         </div>
-    )
+    );
 }

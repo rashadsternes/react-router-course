@@ -15,7 +15,7 @@ export default function App () {
     <Router>
       <div>
         <Navbar />
-    
+
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/players' element={<Players />} />
@@ -24,5 +24,5 @@ export default function App () {
         </Routes>
       </div>
     </Router>
-  )
+  );
 }
