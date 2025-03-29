@@ -10,6 +10,7 @@ import Teams from './Teams';
 import Players from './Players';
 import TeamPage from './TeamPage';
 import Player from './Player';
+import Team from './Team';
 
 export default function App () {
   return (
@@ -22,7 +23,9 @@ export default function App () {
           <Route path='/players' element={<Players />}> 
             <Route path=':playerId' element={<Player />} />
           </Route>
-          <Route path='/teams' element={<Teams />} />
+          <Route path='/teams' element={<Teams />} >
+            <Route path=':teamId' element={<Team />} />
+          </Route>
           <Route path='/:teamId' element={<TeamPage />} />
         </Routes>
       </div>
