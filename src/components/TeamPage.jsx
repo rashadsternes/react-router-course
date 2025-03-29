@@ -4,6 +4,7 @@ import useTeamsArticles from '../hooks/useTeamsArticles';
 import useTeam from '../hooks/useTeam';
 import TeamLogo from './TeamLogo';
 import { slugify } from '../utils';
+import Loading from './Loading';
 
 function useTeamPageData (teamId) {
     const { 
@@ -40,7 +41,7 @@ export default function TeamPage () {
     } = useTeamPageData(teamId);
 
     if (loading === true) {
-        return <p>LOADING</p>
+        return <Loading />
     }
 
     if (!teamNames.includes(teamId)) {
@@ -48,7 +49,7 @@ export default function TeamPage () {
             The {teamId} is not a valid team.
         </h1>
     }
-    
+
     return (
         <div className='panel'>
             <TeamLogo id={teamId} />
