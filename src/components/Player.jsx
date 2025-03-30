@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
+import * as React from 'react';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import usePlayer from '../hooks/usePlayer';
 import Loading from './Loading';
 
@@ -9,14 +10,15 @@ export default function Player () {
         response: player,
         loading
     } = usePlayer(playerId);
+    let body;
 
     if (loading === true) {
-        return <Loading />;
-    }
-
-    return (
-        <div className='panel'>
-            <img 
+        body = <Loading />;
+    } else if (player === null) {
+        body = <Navigate to='/players' />
+    } else {
+        body = (<React.Fragment>
+          <img 
                 className='avatar'
                 src={player.avatar}
                 alt={`Avatar for ${player.name}`}
@@ -42,6 +44,12 @@ export default function Player () {
                     <li>RPG<div>{player.rpg}</div></li>
                 </ul>
             </div>
+        </React.Fragment>);
+    }
+
+    return (
+        <div className='panel'>
+            { body }
         </div>
     );
 }
