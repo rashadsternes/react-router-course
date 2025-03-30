@@ -10,7 +10,8 @@ export default function Article () {
     loading
   } = useArticle({ teamId, articleId });
   
-  let body 
+  let body;
+  
   if (loading === true) {
     body = <Loading />
   } else if (article === null) {
